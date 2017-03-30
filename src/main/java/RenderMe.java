@@ -9,13 +9,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE) //on class level
+//@Target(ElementType.TYPE) //on class level
 
 public @interface RenderMe {
-
     int number() default 0;
     String[] stringArray() default "";
-
+    int[] intArray() default {1,2,3};
     String createdBy() default "";
 
     String lastModified() default "01/01/19901";
