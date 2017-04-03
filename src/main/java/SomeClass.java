@@ -18,4 +18,11 @@ public class SomeClass {
     public SomeClass(int foo) {
         this.foo = foo;
     }
+
+    /**
+     * default-ctor
+     */
+    public SomeClass() {
+        this.foo = 4;
+    }
 }
