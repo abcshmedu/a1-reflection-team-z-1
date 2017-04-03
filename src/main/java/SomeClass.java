@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class SomeClass {
     @RenderMe private int foo;
-    @RenderMe() private int[] array = {1, 2, 3};
+    @RenderMe(with = "ArrayRenderer") private int[] array = {1, 2, 3};
     @RenderMe private Date date = new Date(123456789);
 
     /**

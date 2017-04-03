@@ -46,4 +46,10 @@ public @interface RenderMe {
      * @return the lastModified String
      */
     String lastModified() default "01/01/19901";
+
+    /**
+     *
+     * @return
+     */
+    String with() default "";
 }
