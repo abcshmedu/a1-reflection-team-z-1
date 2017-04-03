@@ -8,7 +8,7 @@ class Tester {
     /**
      * parse function that checks if the reflection works as intended.
      * @param clazz the Class to be used in the reflection
-     * @throws Exception
+     * @throws Exception an InvocationTargetException
      */
     public void parse(Class< ? > clazz) throws Exception {
         Method[] methods = clazz.getMethods();
