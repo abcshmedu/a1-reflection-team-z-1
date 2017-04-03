@@ -1,8 +1,16 @@
 import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
+//import java.lang.reflect.InvocationTargetException;
 
+/**
+ *  Class used for Testing.
+ */
 class Tester {
-    public void parse(Class<?> clazz) throws Exception {
+    /**
+     * parse function that checks if the reflection works as intended.
+     * @param clazz the Class to be used in the reflection
+     * @throws Exception
+     */
+    public void parse(Class< ? > clazz) throws Exception {
         Method[] methods = clazz.getMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(RenderMe.class)) {
