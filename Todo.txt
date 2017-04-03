@@ -1,0 +1,5 @@
+tests:
+
+	- Default values
+	- Tester in aufgabenstellung
+	- assertFalse nicht abgefangenes Array (ohne with in annotation)
