@@ -7,7 +7,7 @@ public class ArrayRenderer extends Renderer{
 
     /**
      * renders an Array into areadable String.
-     * @param array
+     * @param
      * @return
      */
     @Override
@@ -19,11 +19,11 @@ public class ArrayRenderer extends Renderer{
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        String result = "[ ";
+        String result = field.getName() + " (" + field.getType().getSimpleName() + ") Value:" + "[ ";
         for (int i : intArray){
             result += i + ", ";
         }
-        result += "]";
+        result += "]\n";
         return result;
     }
 }
