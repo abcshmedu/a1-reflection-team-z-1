@@ -11,12 +11,23 @@ import static org.junit.Assert.assertNotEquals;
 public class Test {
 
     /**
+     *
+     * @param args
+     */
+    public static void main(String... args) {
+        Test test = new Test();
+        test.testDefaultSomeClass();
+        test.testForArray();
+    }
+
+    /**
      *  Tests if the Renderer works correctly with the default values of SomeClass.
      */
     public void testDefaultSomeClass() {
         SomeClass someClass = new SomeClass();
         Renderer testedRenderer = new Renderer(someClass);
-        assertEquals("Instance of: SomeClass\nfoo (int) Value:4\narray (int[]) Value:[ 1, 2, 3, ]\ndate (Date) Value:Fri Jan 02 11:17:36 CET 1970", testedRenderer.render());
+        assertEquals("Instance of: SomeClass\nfoo (int) Value:4\nARR (int[]) Value:[ 1, 2, 3, ]\nDATE (Date) Value:Fri Jan 02 11:17:36 CET 1970\n" +
+                "testing (String) Returns:success", testedRenderer.render());
 
     }
 
@@ -55,8 +66,8 @@ public class Test {
         Renderer rendererForWrong = new Renderer(wrong);
         Renderer rendererForCorrect = new Renderer(correct);
 
-        assertNotEquals("Instance of: TestClassWrong\ntestArray (int[]) Value:[ 1, 2, ]", rendererForWrong.render());
-        assertEquals("Instance of: TestClassCorrect\ntestArray (int[]) Value:[ 1, 2, ]", rendererForCorrect.render());
+        assertNotEquals("Instance of: TestClassWrong\ntestArray (int[]) Value:[ 1, 2, ]\n", rendererForWrong.render());
+        assertEquals("Instance of: TestClassCorrect\ntestArray (int[]) Value:[ 1, 2, ]\n", rendererForCorrect.render());
 
     }
 }

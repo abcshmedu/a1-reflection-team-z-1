@@ -13,7 +13,7 @@ public class SomeClass {
     // yes this is also magic
     @RenderMe(with = "Renderer.ArrayRenderer") private static final int[] ARR = {1, 2, 3};
     @RenderMe
-    private static final Date DATEE = new Date(123456789);
+    private static final Date DATE = new Date(123456789);
     // magic number for testing
     private static final int FOUR = 4;
 
