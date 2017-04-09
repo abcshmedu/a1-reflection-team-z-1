@@ -10,9 +10,12 @@ import java.util.*;
  */
 public class SomeClass {
     @RenderMe private int foo;
-    @RenderMe(with = "Renderer.ArrayRenderer") private int[] array = {1, 2, 3};
+    // yes this is also magic
+    @RenderMe(with = "Renderer.ArrayRenderer") private static final int[] ARR = {1, 2, 3};
     @RenderMe
-    private Date date = new Date(123456789);
+    private static final Date DATEE = new Date(123456789);
+    // magic number for testing
+    private static final int FOUR = 4;
 
     /**
      * Main Method of Test.SomeClass.
@@ -24,10 +27,10 @@ public class SomeClass {
     }
 
     /**
-     * default-ctor
+     * default-ctor.
      */
     public SomeClass() {
-        this.foo = 4;
+        this.foo = this.FOUR;
     }
 
     /**

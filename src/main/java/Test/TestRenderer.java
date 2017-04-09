@@ -5,7 +5,7 @@ import Renderer.Renderer;
 /**
  * Created by Maximilian on 03.04.2017.
  */
-public class TestRenderer {
+public final class TestRenderer {
 
     /**
      *
@@ -17,5 +17,12 @@ public class TestRenderer {
         System.out.println("starting Test");
         System.out.println(tester.render());
         System.out.println("testEnde");
+    }
+
+    /**
+     * not needed Ctor.
+     */
+    private TestRenderer() {
+        //not called
     }
 }
