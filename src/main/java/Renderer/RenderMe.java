@@ -1,4 +1,4 @@
-/**
+package Renderer; /**
  * Created by Maximilian on 27.03.2017.
 
 **/
@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 //import java.lang.annotation.Target;
 
 /**
- * Anotation that sets the Retention of RenderMe to Runtime.
+ * Anotation that sets the Retention of Renderer.RenderMe to Runtime.
  */
 @Retention(RetentionPolicy.RUNTIME)
 //@Target(ElementType.TYPE) //on class level
@@ -33,7 +33,7 @@ public @interface RenderMe {
      *returns the annotated Integer array or the default Value of {1, 2, 3}.
      * @return the annotated int[]
      */
-    int[] intArray() default {1, 2, 3};
+    int[] intArray() default {1, 2, };
 
     /**
      *
@@ -48,8 +48,8 @@ public @interface RenderMe {
     String lastModified() default "01/01/19901";
 
     /**
-     *
-     * @return
+     * A method that allows a user to specify a special renderer for a Field.
+     * @return what renderer this Field is supposed to be rendered
      */
     String with() default "";
 }

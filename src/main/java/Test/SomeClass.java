@@ -1,17 +1,21 @@
-import java.io.*;
+package Test;
+
+import Renderer.RenderMe;
+
 import java.util.*;
-//import RenderMe;
+//import Renderer.RenderMe;
 
 /**
  * Class that is used to test the new reflection mechanism.
  */
 public class SomeClass {
     @RenderMe private int foo;
-    @RenderMe(with = "ArrayRenderer") private int[] array = {1, 2, 3};
-    @RenderMe private Date date = new Date(123456789);
+    @RenderMe(with = "Renderer.ArrayRenderer") private int[] array = {1, 2, 3};
+    @RenderMe
+    private Date date = new Date(123456789);
 
     /**
-     * Main Method of SomeClass.
+     * Main Method of Test.SomeClass.
      *
      * @param foo the Integer Input of the function.
      */

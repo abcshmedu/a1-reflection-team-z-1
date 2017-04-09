@@ -1,3 +1,4 @@
+package Renderer;
 
 import java.lang.reflect.*;
 
@@ -9,7 +10,7 @@ public class Renderer {
     private Object toBeRendered;
 
     /**
-     * Creates a new Renderer for the given target.
+     * Creates a new Renderer.Renderer for the given target.
      * @param target the Object to be rendered
      */
     public Renderer(Object target) {
@@ -22,7 +23,7 @@ public class Renderer {
     public Renderer() { }
 
     /**
-     * returns a String reperesenting all variables of the Objekt annotated with RenderMe.
+     * returns a String reperesenting all variables of the Objekt annotated with Renderer.RenderMe.
      * @return a String representation.
      */
     public String render() {
