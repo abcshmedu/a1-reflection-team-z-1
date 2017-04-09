@@ -16,7 +16,7 @@ public class Test {
     public void testDefaultSomeClass() {
         SomeClass someClass = new SomeClass();
         Renderer testedRenderer = new Renderer(someClass);
-        assertEquals("", testedRenderer.render());
+        assertEquals("Instance of: SomeClass\nfoo (int) Value:4\narray (int[]) Value:[ 1, 2, 3, ]\ndate (Date) Value:Fri Jan 02 11:17:36 CET 1970", testedRenderer.render());
 
     }
 

@@ -29,4 +29,13 @@ public class SomeClass {
     public SomeClass() {
         this.foo = 4;
     }
+
+    /**
+     * A method to test method rendering.
+     * @return teh String Succes
+     */
+    @RenderMe
+    public String testing() {
+        return "success";
+    }
 }

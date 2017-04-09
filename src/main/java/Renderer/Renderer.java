@@ -55,6 +55,7 @@ public class Renderer {
 
             } }
         }
+        result += renderMethods();
         return result;
     }
 
@@ -70,6 +71,30 @@ public class Renderer {
             result += field.getName() + " (" + field.getType().getSimpleName() + ") Value:" + field.get(obj).toString() +  "\n";
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * a Method that retunns a String detailing the parameterless methods of toBeRendered.
+     * @return the String render of the Methods
+     */
+    private String renderMethods() {
+        String result = "";
+        Method[] methods = toBeRendered.getClass().getDeclaredMethods();
+        for (Method method : methods) {
+            method.setAccessible(true);
+            if (method.isAnnotationPresent(RenderMe.class)) {
+                if (method.getGenericParameterTypes().length == 0) {
+                    try {
+                        result += method.getName().toString() + " (" + method.getReturnType().getSimpleName() + ") Returns:" + method.invoke(toBeRendered).toString();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
         return result;
     }

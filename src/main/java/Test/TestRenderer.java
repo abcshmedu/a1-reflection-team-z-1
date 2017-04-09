@@ -12,7 +12,7 @@ public class TestRenderer {
      * @param args argumente der Methode
      */
     public static void main(String... args) {
-        SomeClass tested = new SomeClass(2);
+        SomeClass tested = new SomeClass();
         Renderer tester = new Renderer(tested);
         System.out.println("starting Test");
         System.out.println(tester.render());
