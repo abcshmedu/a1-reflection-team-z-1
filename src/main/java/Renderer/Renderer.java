@@ -39,16 +39,8 @@ public class Renderer {
                  try {
                      Renderer specialRenderer = (Renderer) Class.forName(field.getAnnotation(RenderMe.class).with()).getConstructor().newInstance();
                  result += specialRenderer.render(field, toBeRendered);
-                } catch (IllegalAccessException e) {
-                     e.printStackTrace();
-                 } catch (ClassNotFoundException e) {
-                     e.printStackTrace();
-                 } catch (NoSuchMethodException e) {
-                     e.printStackTrace();
-                 } catch (InstantiationException e) {
-                     e.printStackTrace();
-                 } catch (InvocationTargetException e) {
-                     e.printStackTrace();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                  }
                 } else {
                     result += render(field, toBeRendered);
@@ -69,8 +61,8 @@ public class Renderer {
         String result = "";
         try {
             result += field.getName() + " (" + field.getType().getSimpleName() + ") Value:" + field.get(obj).toString() +  "\n";
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return result;
     }
@@ -88,10 +80,8 @@ public class Renderer {
                 if (method.getGenericParameterTypes().length == 0) {
                     try {
                         result += method.getName().toString() + " (" + method.getReturnType().getSimpleName() + ") Returns:" + method.invoke(toBeRendered).toString();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
-                        e.printStackTrace();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
                     }
                 }
             }
